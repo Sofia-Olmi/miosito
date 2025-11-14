@@ -1,20 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>Hello World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Sofia Olmi</title>
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>Hello World!</h1>
-    <p>Questa è una semplice pagina di esempio...</p>
-    <p>Per maggiori informazioni, visita il sito di <a href="https://www.miosito.it">miosito.it</a></p>
-<h1>Benvenuto su Mio Sito</h1>
-<p>Questo è un esempio di pagina HTML semplice.</p>
-<p>Puoi personalizzare questo contenuto come preferisci.</p>
+
+<!-- HEADER - ROW 1 -->
+  <div class="container-fluid">
+      <div class="row bg-transparent header-fixed">
+            <div class="col-2 col-lg-1">
+              <a href="#"><img class="logo" src="img/logo_SofiaOlmi2.png" alt="Logo Sofia Olmi"></a>
+            </div>
+            <div class="d-none d-lg-flex col-lg-11 justify-content-end"> 
+                <ul class="nav-list sottotitolo color-black">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">*PROGETTI</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">*CHI SONO</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">*CONTATTI</a>
+                      </li>
+                </ul>
+            </div>
+            <div class="col-md-1 offset-md-11 d-flex d-lg-none justify-content-end align-items-center">
+              <button class="btn btn-menu">Menù</button>
+            </div>
+        </div>
+
+
+          <div class="mobile-nav-wrapper d-lg-none">
+                <button class="btn btn-close mb-3">Close</button>
+                <ul class="nav-list">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">*PROGETTI</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link selected">*CHI SONO</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link">*CONTATTI</a>
+                      </li>
+                </ul>
+        </div>  
+
+
+<!-- ROW 2 -->
+<div class="row">
+    <div class="col-12 position-relative p-0">
+        <img src="img/foto_portfolio2.jpg" class="img-fluid w-100" alt="Foto Sofia Olmi">
+        <div class="box-titolo">
+            <p class="titolo color-black">PORTFOLIO<br>PERSONALE</p>
+            <p class="titolo-main color-green">SOFIA OLMI</p>
+            <p class="sottotitolo nav-link color-black">*CHI SONO?</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- ROW 3 -->
+<div class="row">
+    <div class="col-12 bg-gray">
+  <div class="col-12 col-md-8 offset-md-2 text-center box-sezione">
+      <p class="sottotitolo-sezione">DAL CONCEPT ALLA REALIZZAZIONE</p>
+      <p class="titolo-sezione">IL MIO PERCORSO <br> ATTRAVERSO I PROGETTI</p>
+    </div>
+    </div>
+</div>
+
+
+<!-- ROW 4 -->
+<div class="row">
+  <div class="col-12 box-img-big bg-green2">
+    <img src="img/robotizr1.jpg" class="img-fluid" alt="Progetto Robotizr">
+  </div>
+</div>
+
+
+<!-- ROW 5 -->
+<div class="row bg-green2 align-items-center">
+            <div class="col-md-6 mb-3">
+                <img src="img/robotizr2.jpg" class="img-fluid" alt="Progetto Robotizr">
+            </div>
+            <div class="col-12 col-md-4 offset-md-1 mb-3">
+                <p class="titoletto">ROBOTIZR - REBRANDING</p>
+                <p>Il marchio è stato realizzato per una startup che desidera comunicare innovazione e dinamicità che la caratterizzano;
+                    il marchio rimane semplice e le linee pulite, proprio per renderlo versatile in diverse situazioni.
+                    La simbologia dietro al marchio è intuitiva: le frecce rappresentano
+                    l’evoluzione continua, lo sviluppo e l’adattamento mentre il quadrato sul retro crea un senso di stabilità.
+                    In particolare lo stile con il quale sono rappresentate le frecce
+                    richiama le indicazioni all’interno di ambienti industriali come
+                    quello delle fabbriche di cui la startup si occupa.</p>
+            </div>
+        </div>
+
+
+
+
+  </div>
+
+<!-- codice javascript -->
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+// Seleziona gli elementi
+const btnMenu = document.querySelector('.btn-menu');
+const btnClose = document.querySelector('.btn-close');
+const mobileNavWrapper = document.querySelector('.mobile-nav-wrapper');
+const navLinks = document.querySelectorAll('.mobile-nav-wrapper .nav-link');
+
+// Apre il menu mobile
+btnMenu.addEventListener('click', function() {
+mobileNavWrapper.classList.add('show');
+});
+
+// Chiude il menu mobile con il bottone close
+btnClose.addEventListener('click', function() {
+mobileNavWrapper.classList.remove('show');
+});
+
+// Chiude il menu mobile cliccando sullo sfondo (ma non sui link)
+mobileNavWrapper.addEventListener('click', function(e) {
+// Verifica se il click non è su un link
+let isLink = false;
+navLinks.forEach(function(link) {
+if (link.contains(e.target)) {
+isLink = true;
+}
+});
+
+// Se non è un link, chiudi il menu
+if (!isLink) {
+mobileNavWrapper.classList.remove('show');
+}
+});
+});
+
+
+</script>
+
+
 
 </body>
-<style>
-    body {
-        background-color: #FFC0CB;
-    }
-</style>
+
 </html>
